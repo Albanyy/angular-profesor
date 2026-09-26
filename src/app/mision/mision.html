@@ -1,0 +1,31 @@
+<div [class.alerta-roja]="alarmaGlobalActiva()" class="contenedor-mision">
+    <h2>Dashboard Espacio</h2>
+
+    <p>Misiones registradas: <strong>{{ contadorMisiones() }}</strong></p>
+
+    <div>
+        <label>Nombre de la misión: </label>
+        <input
+            type="text"
+            [(ngModel)]="nombreMision"
+            placeholder="Ej. Apolo 11" />
+    </div>
+
+    <br>
+
+    <button
+        [disabled]="nombreMision().length === 0"
+        (click)="asignarMision()"
+        class="boton-asignar">
+        Asignar Misión
+    </button>
+
+    <br><br>
+
+    <button
+        (click)="alternarEstadoAlarma()"
+        class="boton-panico">
+        {{ alarmaGlobalActiva() ? 'Desactivar Alarma' :
+        'Activar Alarma de Pánico' }}
+    </button>
+</div>

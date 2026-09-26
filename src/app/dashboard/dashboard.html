@@ -1,0 +1,25 @@
+<main [class.dark-theme]="modoOscuro()">
+    <div class="card">
+        <h2>Perfil de: {{ usuarioActivo() }}</h2>
+        <span>Nivel actual: {{ nivel() }}</span>
+    </div>
+
+    <div style="margin-top: 15px;">
+        <button (click)="alternarTema()">Cambiar Tema</button>
+        <br><br>
+        <input type="text" [disabled]="modoOscuro()"
+            placeholder="Escribe algo aquí..." />
+    </div>
+
+    <hr>
+
+
+    <div style="margin-top: 15px;">
+        <label>Correo Electrónico: </label>
+        <input [(ngModel)]="correo" placeholder="Tu email" />
+
+        <p [class.oculto]="correo().length === 0">
+            Enviaremos un código a <strong>{{ correo() }}</strong>
+        </p>
+    </div>
+</main>

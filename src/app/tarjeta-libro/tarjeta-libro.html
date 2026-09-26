@@ -1,0 +1,17 @@
+<article class="tarjeta" [class.agotado]="!disponible()">
+    <h3>{{ titulo }}</h3>
+    <p>{{ autor }} {{ anio }}</p>
+
+    @if (disponible()) {
+    <p class="estado libre">disponible para lectura</p>
+    } @else {
+    <p class="estado ocupado">prestado a mama cerdita</p>
+    }
+
+    <button (click)="votar()">me gusta {{ votos() }}</button>
+    <button (click)="alternarDisponibilidad()">cambiar estado</button>
+
+    @if (esPopular()) {
+    <span class="insignia">popular</span>
+    }
+</article>

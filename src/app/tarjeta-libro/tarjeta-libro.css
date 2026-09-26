@@ -1,0 +1,22 @@
+:host {
+    display: block;
+}
+
+.tarjeta {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.agotado {
+    opacity: 0.55;
+}
+
+.estado.libre {
+    color: green;
+}
+
+.estado.ocupado {
+    color: red;
+}
